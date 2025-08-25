@@ -1,0 +1,412 @@
+/* Mengimpor font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Pengaturan umum untuk seluruh halaman */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #233946;
+    --text-color: #fff;
+    --main-color: #7cf03d;
+    --accent-color: #f5f5f5;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+/* Pengaturan untuk body halaman */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding-top: 8rem; /* Menyesuaikan dengan tinggi header */
+}
+
+/* Setiap section diatur agar mengisi minimal 100vh dan diberi padding */
+section {
+    padding: 5rem 10%;
+}
+
+/* Desain header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 10%;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    color: #7cf03d;
+    font-size: 1.5rem;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-left: 3rem;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+/* Desain untuk home section */
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.home-content {
+    flex: 1;
+}
+
+.home-content h3 {
+    display: inline-block;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.home-content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.home-content h3 span {
+    color: var(--main-color);
+}
+
+.home-content p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+/* Animasi untuk gambar di home section */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.home-img img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    animation: zoomIn 1.5s ease-out;
+}
+
+/* Tentang Section */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.about-content h2 {
+    font-size: 1,5rem;
+    margin-bottom: 1rem;
+    color: transparent;
+    -webkit-text-stroke: .7px #7cf03d;
+}
+
+.about-content p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: var(--accent-color);
+}
+
+/* Layanan Section */
+.services h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: transparent;
+    -webkit-text-stroke: .7px #7cf03d;
+}
+
+.service-cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.service-card {
+    background: var(--second-bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    background: var(--main-color);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Portfolio Section */
+.portfolio-gallery {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.portfolio h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: transparent;
+    -webkit-text-stroke: .7px #7cf03d;
+}
+
+.portfolio-item {
+    background: var(--second-bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: 0.3s;
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.portfolio-item:hover {
+    background: var(--main-color);
+    color: #348024;
+    transform: translateY(-5px);
+}
+
+/* Contact Form */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1.6rem;
+}
+
+.contact button {
+    background: var(--main-color);
+    color: #348024;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.8rem;
+    transition: 0.3s;
+    
+}
+
+.contact button:hover {
+    background: #fff;
+    color: var(--main-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--second-bg-color);
+    color: var(--text-color);
+}
+
+footer p {
+    font-size: 1.4rem;
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-img img {
+        max-width: 80%;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 100%;
+    }
+
+    .portfolio-item {
+        width: 100%;
+    }
+}
+
+.home-info .btn-sci {
+    display: flex;
+    align-items: center;
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 30px;
+    background: #7cf03d;
+    border: 2px solid #7cf03d;
+    border-radius: 40px;
+    box-shadow: 0 0 01px #7cf03d;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #7cf03d;
+    box-shadow: none;
+}
+
+.home-info .btn-sci .sci {
+    margin: 20px;
+}
+
+.home-info .btn-sci .sci a {
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid #7cf03d;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #7cf03d;
+    margin: 0 8px;
+    transition: .5s;
+}
+
+.home-info .btn-sci .sci a:hover {
+    background: #7cf03d;
+    color: #1f242d;
+    box-shadow: 0 0 20px  #7cf03d;
+}
+
+.home-img .img-box {
+    position: relative;
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent, transparent, #7cf03d);
+    animation: rotate-border 10s linear infinite;
+}
+
+@keyframes rotate-border {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.home-img .img-box .img-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #1a1919;
+    border-radius: 50%;
+    border: ,1px solid #1f242d;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.home-img .img-box .img-item img {
+    position: absolute;
+    top: 30px;
+    display: block;
+    width: 85%;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+}
+
+.home-info h1 {
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: .7px #7cf03d;
+}
+   
+.header i {
+    display: inline-flex;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #7cf03d;
+    margin: 0 8px;
+    transition: .5s;
+
+}
+
